@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>张雪峰 · 高考志愿咨询</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <main class="chat-container">
+        <header class="chat-header">
+            <h1>张雪峰</h1>
+            <p class="subtitle">高考志愿 · 选科 · 择校 · 用就业倒推法给你说实话</p>
+        </header>
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <form id="chat-form" class="chat-input-bar">
+            <textarea
+                id="question-input"
+                placeholder="说说你多少分、选的什么科、想去哪..."
+                rows="1"
+                autocomplete="off"
+            ></textarea>
+            <button type="submit" id="send-btn">问</button>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js?v=3"></script>
+</body>
+</html>
