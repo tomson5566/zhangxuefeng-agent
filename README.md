@@ -365,6 +365,6 @@ MVP 没做、PM 后续可能加的:
 
 ## License
 
-内部项目,仅 PM 团队使用。
+Apache License 2.0
 
-参考致谢:[DeepWiki-Open](https://github.com/AsyncFuncAI/deepwiki-open) 的 RAG + Wiki 生成思路,mmx CLI (MiniMax 出品)。
+参考致谢:[DeepWiki-Open](https://github.com/AsyncFuncAI/deepwiki-open) 的 RAG + Wiki 生成思路, nuwa-skill 生成 zhangxuefeng-perspective 作为角色知识库。
