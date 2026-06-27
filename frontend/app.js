@@ -1,11 +1,7 @@
-// 后端 base URL:用当前访问的 hostname 拼接 8000 端口
-// 这样局域网 IP、域名、localhost 都能正确访问,不被 CORS 拦
-function resolveApiBase() {
-    const host = window.location.hostname;
-    if (!host) return 'http://localhost:8000';  // file:// 协议兜底
-    return `http://${host}:8000`;
-}
-const API_BASE = resolveApiBase();
+// PUBLIC_FIX_v1 - public deployment fix (auto-applied; do not edit by hand)
+// 反代后 API 和前端同源,用相对路径。nginx 把 /api/* 转发到后端 :8000。
+// 留个 fallback:同源失败时回退到当前 host :8000 直连(供调试)
+const API_BASE = '';
 
 // ==================== Session ID(多轮记忆)====================
 // 首次访问生成 UUID 放 localStorage,后续复用 — 同一浏览器同一会话

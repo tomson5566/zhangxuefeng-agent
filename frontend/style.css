@@ -15,6 +15,10 @@
     padding: 0;
 }
 
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+
 html, body {
     height: 100%;
 }
@@ -33,10 +37,10 @@ body {
 .chat-container {
     max-width: 720px;
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    padding: 24px 20px 0;
+    padding: calc(24px + env(safe-area-inset-top)) 20px 0 calc(20px + env(safe-area-inset-left));
 }
 
 /* Header — 粗的左边框线 + 标题文字（PRD 5.4）*/
@@ -139,7 +143,7 @@ body {
     display: flex;
     gap: 8px;
     align-items: flex-end;
-    padding: 12px 0 20px;
+    padding: 12px 0 calc(20px + env(safe-area-inset-bottom));
     border-top: 1px solid var(--border);
 }
 
@@ -211,13 +215,51 @@ body {
 /* 移动端 */
 @media (max-width: 600px) {
     .chat-container {
-        padding: 16px 14px 0;
+        padding: calc(16px + env(safe-area-inset-top)) 14px 0;
     }
     .chat-header h1 {
-        font-size: 24px;
+        font-size: clamp(20px, 6vw, 24px);
+    }
+    .chat-header .subtitle {
+        font-size: clamp(12px, 3.5vw, 14px);
     }
     .message {
         max-width: 100%;
+        font-size: clamp(14px, 4vw, 15px);
+    }
+    #question-input {
+        font-size: 16px;        /* >=16px 阻止 iOS zoom-in */
+        min-height: 44px;       /* iOS HIG 触摸目标 */
+        line-height: 1.4;
+    }
+    #send-btn {
+        min-width: 56px;
+        min-height: 44px;
+        font-size: 16px;
+    }
+}
+
+/* 平板 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .chat-container {
+        max-width: 640px;
+    }
+}
+
+/* 横屏 — 矮屏 */
+@media (max-height: 500px) and (orientation: landscape) {
+    .chat-container {
+        padding: calc(12px + env(safe-area-inset-top)) 14px 0;
+    }
+    .chat-header {
+        margin-bottom: 12px;
+    }
+    .chat-header h1 {
+        font-size: 20px;
+    }
+    .messages {
+        gap: 8px;
+        padding: 4px 0 16px;
     }
 }
 
@@ -284,6 +326,7 @@ body {
     font-variant-numeric: tabular-nums;
     display: block;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 .message-agent thead {
     background: oklch(55% 0.18 25 / 0.08);  /* 砖红淡淡 */
@@ -311,3 +354,5 @@ body {
 .message-agent a:hover {
     text-decoration-thickness: 2px;
 }
+
+/* MOBILE_FIX_v1 */

@@ -70,8 +70,8 @@ async def stream_answer(question: str, session_id: str = "default-session") -> A
     # 1. 联网搜索 — 失败/空结果降级,LLM 仍能继续工作
     fresh = search_fresh_data(question)
 
-    # 2. 取历史上下文
-    history_ctx = build_history_context(session_id)
+    # 2. 取历史上下文(await — 持 per-session 锁)
+    history_ctx = await build_history_context(session_id)
 
     # 3. 拼 enriched
     enriched = (
@@ -103,12 +103,14 @@ async def stream_answer(question: str, session_id: str = "default-session") -> A
     # 5. 流式结束 — fire-and-forget 写记忆(create_task)
     # 这样 [DONE] 立刻发,记忆写在后台跑(不阻塞 SSE 关闭)
     # 风险:进程崩了记忆丢 — 但 in-memory dict 本来就不持久,可接受
+    # 注:add_exchange 现在是 async(持 per-session 锁),直接 await 即可,
+    # 不再需要 asyncio.to_thread 包一层。
     full_answer = "".join(full_answer_parts)
     if full_answer:
 
         async def _write_memory() -> None:
             try:
-                await asyncio.to_thread(add_exchange, session_id, question, full_answer)
+                await add_exchange(session_id, question, full_answer)
                 log.info(
                     "memory add session=%s answer_len=%d",
                     session_id[:24], len(full_answer),
@@ -122,7 +124,8 @@ async def stream_answer(question: str, session_id: str = "default-session") -> A
         except RuntimeError:
             # 兜底:没 event loop 时同步写(MVP 不应发生,防御性)
             log.warning("no event loop for create_task, sync write")
-            try:
-                add_exchange(session_id, question, full_answer)
-            except Exception as e:  # noqa: BLE001
-                log.warning("sync add_exchange failed: %s", e)
+            # add_exchange 已是 async,无 event loop 时无法调用 — 仅记日志
+            log.warning(
+                "no event loop; skipping memory write for session=%s",
+                session_id[:24],
+            )

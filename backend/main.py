@@ -1,13 +1,18 @@
+# PUBLIC_FIX_v1 - public deployment fix (auto-applied; do not edit by hand)
 from __future__ import annotations
 
+import asyncio  # SAFETY_JUDGE_v1
 import logging
-import time
 
-from fastapi import FastAPI, Header, HTTPException, Query
+from fastapi import Depends, FastAPI, Header, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse, JSONResponse
 
 from backend.agent import stream_answer
+from backend.auth import require_auth
+# INPUT_FILTER_v1
+from backend.input_filter import check as filter_input, FilterResult
+from backend.safety_judge import is_safe  # SAFETY_JUDGE_v1
 from backend.config import settings
 from backend.prompt import warmup
 
@@ -23,8 +28,14 @@ app = FastAPI(title="张雪峰高考志愿 Agent", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     # PRD 9.2 提到跨域 — 前端 3000 后端 8000，需要 CORS。
-    # MVP 阶段放 "*"，PM 后面要收紧再说。
-    allow_origins=["*"],
+    # TODO(security): 生产部署前在此追加正式域名，例如 "https://your-domain.com"。
+    allow_origins=[
+        "http://localhost:5173",   # 前端 dev
+        "http://127.0.0.1:5173",
+        "http://localhost:8000",   # 同源
+        "http://127.0.0.1:8000",
+        "http://tmdata.in:30000",  # 公网反代 origin (nginx :30000)
+    ],
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
@@ -53,27 +64,77 @@ def _startup() -> None:
 
 @app.get("/health")
 def health() -> dict:
-    return {
-        "status": "ok",
-        "model": settings.model_name,
-        "skill_dir": str(settings.skill_dir),
-        "ts": int(time.time()),
-    }
+    # 故意只返 status:避免泄漏 model 名称、skill_dir 绝对路径、服务器时间。
+    return {"status": "ok"}
 
 
 @app.get("/api/chat")
 async def chat(
     q: str = Query(..., min_length=1, max_length=2000, description="用户问题"),
     x_session_id: str | None = Header(None, alias="X-Session-ID"),
+    _: None = Depends(require_auth),
 ):
     """流式聊天端点 — SSE 协议（GET + query string，最简单）。
 
-    多轮记忆:读 X-Session-ID header,缺省回退到 default-session(共享桶,仅调试用)。
+    多轮记忆:读 X-Session-ID header,缺失直接 400 — 不再走共享 default 桶,
+    避免跨用户串扰与无界内存增长。
     """
-    session_id = (x_session_id or "default-session").strip() or "default-session"
+    session_id = (x_session_id or "").strip()
+    if not session_id:
+        raise HTTPException(
+            status_code=400,
+            detail="X-Session-ID header is required",
+        )
     q = q.strip()
     if not q:
         raise HTTPException(status_code=400, detail="q must not be empty")
+
+    # INPUT_FILTER_v1
+    filter_result = filter_input(q, session_id)
+    if filter_result.blocked:
+        log.info(
+            "input filtered: rule=%s session=%s q=%r",
+            filter_result.rule, session_id[:32], q[:80],
+        )
+
+        async def event_generator_blocked():
+            import json as _json
+            yield f"data: {_json.dumps({'t': filter_result.reply}, ensure_ascii=False)}\n\n"
+            yield "data: [DONE]\n\n"
+
+        return StreamingResponse(
+            event_generator_blocked(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "X-Accel-Buffering": "no",
+                "Connection": "keep-alive",
+            },
+        )
+
+    # SAFETY_JUDGE_v1 - LLM 审查层
+    is_ok, judge_raw = await asyncio.to_thread(is_safe, q)
+    if not is_ok:
+        log.info(
+            "LLM safety judge blocked: raw=%s session=%s q=%r",
+            judge_raw[:20], session_id[:32], q[:80],
+        )
+
+        async def event_generator_judged():
+            import json as _json
+            reply = "哥们儿,你这问题我可不接——咱聊正事,孩子多少分?选啥科?哪个省?"
+            yield f"data: {_json.dumps({'t': reply}, ensure_ascii=False)}\n\n"
+            yield "data: [DONE]\n\n"
+
+        return StreamingResponse(
+            event_generator_judged(),
+            media_type="text/event-stream",
+            headers={
+                "Cache-Control": "no-cache",
+                "X-Accel-Buffering": "no",
+                "Connection": "keep-alive",
+            },
+        )
 
     log.info(
         "chat request: session=%s q=%r (len=%d)",

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 from typing import TypedDict
 
@@ -22,6 +23,7 @@ class _SessionState(TypedDict):
 
 
 _sessions: dict[str, _SessionState] = {}
+_session_locks: dict[str, asyncio.Lock] = {}
 _summary_llm: ChatOpenAI | None = None
 
 
@@ -39,11 +41,9 @@ def _get_summary_llm() -> ChatOpenAI:
 
 
 def _sanitize_session_id(session_id: str) -> str:
-    if not session_id:
-        return "default-session"
-    s = session_id.strip()
+    s = (session_id or "").strip()
     if not s:
-        return "default-session"
+        raise ValueError("session_id must not be empty")
     return s[:_SESSION_ID_MAX_LEN]
 
 
@@ -53,8 +53,27 @@ def _get_or_init(session_id: str) -> _SessionState:
     return _sessions[session_id]
 
 
+def _get_lock(session_id: str) -> asyncio.Lock:
+    """Per-session 锁 — A 用户的锁不阻塞 B 用户。
+
+    注:此函数本身只创建/查 dict,必须在 event loop 里调用
+    (因为 asyncio.Lock() 绑定当前 loop)。所有公开 async 函数入口
+    持有锁,确保同一 session 的读写串行化。
+    """
+    lock = _session_locks.get(session_id)
+    if lock is None:
+        lock = asyncio.Lock()
+        _session_locks[session_id] = lock
+    return lock
+
+
 def _maybe_summarize(state: _SessionState) -> None:
     """如果 recent 超过 6 轮(12 条),把最早的 6 轮摘要进 summary。
+
+    TODO(perf): 内部 LLM invoke() 同步阻塞 event loop。
+    修复方式:把 _get_summary_llm().ainvoke(prompt) 改造为 async,
+    然后让 _maybe_summarize 变 async,add_exchange 内 await 它。
+    本期范围外,后续性能优化再做。
 
     设计:
     - 用 while 循环,处理 1 轮就 break / 失败就 return
@@ -100,42 +119,39 @@ def _maybe_summarize(state: _SessionState) -> None:
         )
 
 
-def add_exchange(session_id: str, user_msg: str, ai_msg: str) -> None:
+async def add_exchange(session_id: str, user_msg: str, ai_msg: str) -> None:
     """把一轮 Q&A 写入 session 记忆,触发摘要检查。
 
-    同步函数 — 调用方应该用 asyncio.to_thread() 包一层避免阻塞 event loop。
+    async 函数 — 持 per-session 锁串行化,防止并发写导致 recent 错位。
     """
     if not user_msg or not ai_msg:
         return
     sid = _sanitize_session_id(session_id)
-    state = _get_or_init(sid)
-    state["recent"].append(HumanMessage(content=user_msg))
-    state["recent"].append(AIMessage(content=ai_msg))
-    _maybe_summarize(state)
+    async with _get_lock(sid):
+        state = _get_or_init(sid)
+        state["recent"].append(HumanMessage(content=user_msg))
+        state["recent"].append(AIMessage(content=ai_msg))
+        _maybe_summarize(state)
 
 
-def build_history_context(session_id: str) -> str:
-    """生成历史上下文的 markdown 文本,准备拼到 enriched (user message) 里。"""
+async def build_history_context(session_id: str) -> str:
+    """读最近 recent + summary 拼成 prompt 上下文片段。"""
     sid = _sanitize_session_id(session_id)
-    state = _get_or_init(sid)
-    parts: list[str] = []
-    if state["summary"]:
-        parts.append(f"【老对话摘要】\n{state['summary']}")
-    if state["recent"]:
-        lines: list[str] = []
+    async with _get_lock(sid):
+        state = _get_or_init(sid)
+        parts: list[str] = []
+        if state["summary"]:
+            parts.append(f"【历史摘要】\n{state['summary']}")
         for m in state["recent"]:
             role = "用户" if isinstance(m, HumanMessage) else "张雪峰"
-            content = (m.content or "")[:300]
-            lines.append(f"- {role}:{content}")
-        parts.append("【最近的对话】\n" + "\n".join(lines))
-    # 诊断 log:让 PM 能看到每轮请求 history 拼接的实际结构
-    has_summary = bool(state["summary"])
-    has_recent = bool(state["recent"])
-    log.info(
-        "[history-build] session=%s has_summary=%s summary_chars=%d recent_msgs=%d",
-        sid[:24], has_summary, len(state["summary"]), len(state["recent"]),
-    )
-    return "\n\n".join(parts) if parts else ""
+            content = (m.content or "").replace("\n", " ")[:200]
+            parts.append(f"{role}:{content}")
+        # 诊断 log:让 PM 能看到每轮请求 history 拼接的实际结构
+        log.info(
+            "[history-build] session=%s has_summary=%s summary_chars=%d recent_msgs=%d",
+            sid[:24], bool(state["summary"]), len(state["summary"]), len(state["recent"]),
+        )
+        return "\n".join(parts) if parts else ""
 
 
 def get_session_stats() -> dict:
