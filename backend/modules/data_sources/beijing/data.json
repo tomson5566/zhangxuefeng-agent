@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "province": "北京",
+    "year": 2025,
+    "subject": "物理类",
+    "source": "2025 北京高考实况(简化版)",
+    "schema_version": "1.0",
+    "last_updated": "2026-06-28"
+  },
+  "rank_table": [
+    {
+      "rank_min": 1,
+      "rank_max": 500,
+      "score_min": 680,
+      "score_max": 700,
+      "level": "清北",
+      "tip": "北京考生最大优势,本地清北录取率高",
+      "school_examples": ["清华大学", "北京大学"]
+    },
+    {
+      "rank_min": 500,
+      "rank_max": 3000,
+      "score_min": 640,
+      "score_max": 680,
+      "level": "头部 985",
+      "tip": "北京 985 扎堆,选专业比选学校重要",
+      "school_examples": ["中国人民大学", "北京航空航天大学", "北京师范大学", "中央财经大学", "北京理工大学"]
+    },
+    {
+      "rank_min": 3000,
+      "rank_max": 8000,
+      "score_min": 600,
+      "score_max": 640,
+      "level": "中坚 985 + 头部 211",
+      "tip": "在京 211 性价比高,实习方便",
+      "school_examples": ["北京邮电大学", "北京交通大学", "北京科技大学", "对外经济贸易大学", "北京化工大学"]
+    },
+    {
+      "rank_min": 8000,
+      "rank_max": 20000,
+      "score_min": 540,
+      "score_max": 600,
+      "level": "211 尾部 + 头部双非",
+      "tip": "双非但在北京,实习资源丰富",
+      "school_examples": ["首都经济贸易大学", "北京工商大学", "北京信息科技大学", "北京建筑大学"]
+    },
+    {
+      "rank_min": 20000,
+      "rank_max": 999999,
+      "score_min": 0,
+      "score_max": 540,
+      "level": "二本/民办",
+      "tip": "北京民办本科有区位优势,实习方便",
+      "school_examples": ["北京城市学院", "北京吉利学院"]
+    }
+  ],
+  "key_advice": {
+    "selection_priority": "北京考生最大优势:本地高校录取率高,优先报北京 211 性价比最高",
+    "city_priority": "你本来就在北京,城市优势已经是天花板,别为了'出京'去偏远 985",
+    "major_priority": "北京 985 选专业优先,HR 看专业 > 看学校",
+    "red_flag_majors": ["生化环材", "工商管理", "市场营销", "新闻学"],
+    "recommend_majors": ["计算机科学与技术", "软件工程", "电子信息工程", "通信工程", "数据科学", "金融学", "会计学", "法学"],
+    "warning_for_poor_family": "北京家庭优先选计算机/金融/法学(实习资源丰富),别选需要出京的偏远专业"
+  },
+  "common_misconceptions": [
+    {"misconception": "北京考生要出京才有出息", "correction": "错,北京本地 211 性价比高,实习方便,HR 认本地学校"},
+    {"misconception": "北京孩子不用那么努力", "correction": "北京 5 万考生竞争清北,你位次 1 万能上 211 但上不了 985,还得拼"}
+  ]
+}
