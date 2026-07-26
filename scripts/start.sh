@@ -11,6 +11,11 @@
 #   - 加 restart 子命令后,先 pkill 旧 uvicorn + http.server,再起新的
 #   - 起后等 /health 返 200 才算成功(最多等 15s)
 
+# ===== 模块化架构说明(2026-06-27 升级)=====
+# 7 个模块自动加载:llm / filter / mmx_search / skill_loader / doc_loader / nginx / deepagent_runner
+# 通过 backend.core.module_loader.ModuleLoader.load_all() 自动发现
+# 详细见 backend/modules/INTEGRATION.md
+
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

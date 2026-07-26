@@ -408,6 +408,4 @@ data: [DONE]
 
 ## License
 
-内部项目,仅 PM 团队使用。
-
-参考致谢:[DeepWiki-Open](https://github.com/AsyncFuncAI/deepwiki-open) 的 RAG + Wiki 生成思路,mmx CLI (MiniMax 出品)。
+Apache 2.0

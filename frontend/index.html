@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#c2410c"><!-- MOBILE_FIX_v1 -->
+    <meta name="theme-color" content="#c2410c">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -11,16 +11,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-    <main class="chat-container">
-        <header class="chat-header">
-            <h1>张雪峰</h1>
-            <p class="subtitle">高考志愿 · 选科 · 择校 · 用就业倒推法给你说实话</p>
+    <aside class="side" id="side">
+        <div class="side-head">
+            <h2>张雪峰 Agent</h2>
+            <div class="sub">高考志愿 · AI 顾问</div>
+        </div>
+        <div class="list" id="chatList"></div>
+        <div class="new-btn" id="newBtn">+ 新建对话</div>
+    </aside>
+
+    <main class="main">
+        <header class="bar">
+            <button class="menu-btn" id="menuBtn" title="侧边栏">☰</button>
+            <span class="logo">张雪峰 Agent</span>
+            <select id="agent-select" class="agent-select" title="切换 AI 角色">
+                <option value="zhangxuefeng">张雪峰</option>
+                <option value="zhongkao">福州中考</option>
+            </select>
+            <span class="status" id="status">已就绪</span>
+            <button id="themeBtn" title="主题切换">🌓</button>
         </header>
-        <div id="messages" class="messages" aria-live="polite"></div>
-        <form id="chat-form" class="chat-input-bar">
+
+        <div id="messages" class="msgs" aria-live="polite">
+            <div class="welcome">
+                <div class="icon">🎓</div>
+                <h2>高考志愿 · 用就业倒推法给你说实话</h2>
+                <p>输入分数 / 选科 / 想去哪,让张雪峰给你盘</p>
+            </div>
+        </div>
+
+        <div class="file-chips" id="fileChips" hidden>
+            <span class="chips-title">已上传 (<span id="chipCount">0</span>)</span>
+            <div class="chips-list" id="chipsList"></div>
+        </div>
+
+        <form id="chat-form" class="inp">
+            <label class="upload-btn" id="uploadBtn" title="上传文档 (txt/docx/xlsx/pdf/pptx)">
+                📎
+                <input type="file" id="fileInput" hidden multiple
+                    accept=".txt,.md,.docx,.xlsx,.pdf,.pptx">
+            </label>
             <textarea
                 id="question-input"
                 placeholder="说说你多少分、选的什么科、想去哪..."
@@ -31,7 +64,10 @@
             <button type="submit" id="send-btn">问</button>
         </form>
     </main>
+
+    <div class="toast" id="toast" hidden></div>
+
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=4"></script>
 </body>
 </html>

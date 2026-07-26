@@ -1,0 +1,443 @@
+[
+  {
+    "score_range": "750+",
+    "upper_bound": 754.9,
+    "lower_bound": 750,
+    "cumulative_rank": 489,
+    "count_in_range": 489
+  },
+  {
+    "score_range": "745-749.9",
+    "upper_bound": 749.9,
+    "lower_bound": 745,
+    "cumulative_rank": 489,
+    "count_in_range": 0
+  },
+  {
+    "score_range": "740-744.9",
+    "upper_bound": 744.9,
+    "lower_bound": 740,
+    "cumulative_rank": 715,
+    "count_in_range": 226
+  },
+  {
+    "score_range": "735-739.9",
+    "upper_bound": 739.9,
+    "lower_bound": 735,
+    "cumulative_rank": 1150,
+    "count_in_range": 435
+  },
+  {
+    "score_range": "730-734.9",
+    "upper_bound": 734.9,
+    "lower_bound": 730,
+    "cumulative_rank": 1661,
+    "count_in_range": 511
+  },
+  {
+    "score_range": "725-729.9",
+    "upper_bound": 729.9,
+    "lower_bound": 725,
+    "cumulative_rank": 2258,
+    "count_in_range": 597
+  },
+  {
+    "score_range": "720-724.9",
+    "upper_bound": 724.9,
+    "lower_bound": 720,
+    "cumulative_rank": 2873,
+    "count_in_range": 615
+  },
+  {
+    "score_range": "715-719.9",
+    "upper_bound": 719.9,
+    "lower_bound": 715,
+    "cumulative_rank": 3652,
+    "count_in_range": 779
+  },
+  {
+    "score_range": "710-714.9",
+    "upper_bound": 714.9,
+    "lower_bound": 710,
+    "cumulative_rank": 4414,
+    "count_in_range": 762
+  },
+  {
+    "score_range": "705-709.9",
+    "upper_bound": 709.9,
+    "lower_bound": 705,
+    "cumulative_rank": 5273,
+    "count_in_range": 859
+  },
+  {
+    "score_range": "700-704.9",
+    "upper_bound": 704.9,
+    "lower_bound": 700,
+    "cumulative_rank": 6107,
+    "count_in_range": 834
+  },
+  {
+    "score_range": "695-699.9",
+    "upper_bound": 699.9,
+    "lower_bound": 695,
+    "cumulative_rank": 7022,
+    "count_in_range": 915
+  },
+  {
+    "score_range": "690-694.9",
+    "upper_bound": 694.9,
+    "lower_bound": 690,
+    "cumulative_rank": 7899,
+    "count_in_range": 877
+  },
+  {
+    "score_range": "685-689.9",
+    "upper_bound": 689.9,
+    "lower_bound": 685,
+    "cumulative_rank": 8746,
+    "count_in_range": 847
+  },
+  {
+    "score_range": "680-684.9",
+    "upper_bound": 684.9,
+    "lower_bound": 680,
+    "cumulative_rank": 9568,
+    "count_in_range": 822
+  },
+  {
+    "score_range": "675-679.9",
+    "upper_bound": 679.9,
+    "lower_bound": 675,
+    "cumulative_rank": 10488,
+    "count_in_range": 920
+  },
+  {
+    "score_range": "670-674.9",
+    "upper_bound": 674.9,
+    "lower_bound": 670,
+    "cumulative_rank": 11267,
+    "count_in_range": 779
+  },
+  {
+    "score_range": "665-669.9",
+    "upper_bound": 669.9,
+    "lower_bound": 665,
+    "cumulative_rank": 12133,
+    "count_in_range": 866
+  },
+  {
+    "score_range": "660-664.9",
+    "upper_bound": 664.9,
+    "lower_bound": 660,
+    "cumulative_rank": 12959,
+    "count_in_range": 826
+  },
+  {
+    "score_range": "655-659.9",
+    "upper_bound": 659.9,
+    "lower_bound": 655,
+    "cumulative_rank": 13783,
+    "count_in_range": 824
+  },
+  {
+    "score_range": "650-654.9",
+    "upper_bound": 654.9,
+    "lower_bound": 650,
+    "cumulative_rank": 14547,
+    "count_in_range": 764
+  },
+  {
+    "score_range": "645-649.9",
+    "upper_bound": 649.9,
+    "lower_bound": 645,
+    "cumulative_rank": 15318,
+    "count_in_range": 771
+  },
+  {
+    "score_range": "640-644.9",
+    "upper_bound": 644.9,
+    "lower_bound": 640,
+    "cumulative_rank": 16068,
+    "count_in_range": 750
+  },
+  {
+    "score_range": "635-639.9",
+    "upper_bound": 639.9,
+    "lower_bound": 635,
+    "cumulative_rank": 16761,
+    "count_in_range": 693
+  },
+  {
+    "score_range": "630-634.9",
+    "upper_bound": 634.9,
+    "lower_bound": 630,
+    "cumulative_rank": 17458,
+    "count_in_range": 697
+  },
+  {
+    "score_range": "625-629.9",
+    "upper_bound": 629.9,
+    "lower_bound": 625,
+    "cumulative_rank": 18132,
+    "count_in_range": 674
+  },
+  {
+    "score_range": "620-624.9",
+    "upper_bound": 624.9,
+    "lower_bound": 620,
+    "cumulative_rank": 18792,
+    "count_in_range": 660
+  },
+  {
+    "score_range": "615-619.9",
+    "upper_bound": 619.9,
+    "lower_bound": 615,
+    "cumulative_rank": 19500,
+    "count_in_range": 708
+  },
+  {
+    "score_range": "610-614.9",
+    "upper_bound": 614.9,
+    "lower_bound": 610,
+    "cumulative_rank": 20128,
+    "count_in_range": 628
+  },
+  {
+    "score_range": "605-609.9",
+    "upper_bound": 609.9,
+    "lower_bound": 605,
+    "cumulative_rank": 20753,
+    "count_in_range": 625
+  },
+  {
+    "score_range": "600-604.9",
+    "upper_bound": 604.9,
+    "lower_bound": 600,
+    "cumulative_rank": 21347,
+    "count_in_range": 594
+  },
+  {
+    "score_range": "595-599.9",
+    "upper_bound": 599.9,
+    "lower_bound": 595,
+    "cumulative_rank": 21936,
+    "count_in_range": 589
+  },
+  {
+    "score_range": "590-594.9",
+    "upper_bound": 594.9,
+    "lower_bound": 590,
+    "cumulative_rank": 22488,
+    "count_in_range": 552
+  },
+  {
+    "score_range": "585-589.9",
+    "upper_bound": 589.9,
+    "lower_bound": 585,
+    "cumulative_rank": 23127,
+    "count_in_range": 639
+  },
+  {
+    "score_range": "580-584.9",
+    "upper_bound": 584.9,
+    "lower_bound": 580,
+    "cumulative_rank": 23641,
+    "count_in_range": 514
+  },
+  {
+    "score_range": "575-579.9",
+    "upper_bound": 579.9,
+    "lower_bound": 575,
+    "cumulative_rank": 24091,
+    "count_in_range": 450
+  },
+  {
+    "score_range": "570-574.9",
+    "upper_bound": 574.9,
+    "lower_bound": 570,
+    "cumulative_rank": 24591,
+    "count_in_range": 500
+  },
+  {
+    "score_range": "565-569.9",
+    "upper_bound": 569.9,
+    "lower_bound": 565,
+    "cumulative_rank": 25117,
+    "count_in_range": 526
+  },
+  {
+    "score_range": "560-564.9",
+    "upper_bound": 564.9,
+    "lower_bound": 560,
+    "cumulative_rank": 25606,
+    "count_in_range": 489
+  },
+  {
+    "score_range": "555-559.9",
+    "upper_bound": 559.9,
+    "lower_bound": 555,
+    "cumulative_rank": 26095,
+    "count_in_range": 489
+  },
+  {
+    "score_range": "550-554.9",
+    "upper_bound": 554.9,
+    "lower_bound": 550,
+    "cumulative_rank": 26558,
+    "count_in_range": 463
+  },
+  {
+    "score_range": "545-549.9",
+    "upper_bound": 549.9,
+    "lower_bound": 545,
+    "cumulative_rank": 27029,
+    "count_in_range": 471
+  },
+  {
+    "score_range": "540-544.9",
+    "upper_bound": 544.9,
+    "lower_bound": 540,
+    "cumulative_rank": 27460,
+    "count_in_range": 431
+  },
+  {
+    "score_range": "535-539.9",
+    "upper_bound": 539.9,
+    "lower_bound": 535,
+    "cumulative_rank": 27886,
+    "count_in_range": 426
+  },
+  {
+    "score_range": "530-534.9",
+    "upper_bound": 534.9,
+    "lower_bound": 530,
+    "cumulative_rank": 28313,
+    "count_in_range": 427
+  },
+  {
+    "score_range": "525-529.9",
+    "upper_bound": 529.9,
+    "lower_bound": 525,
+    "cumulative_rank": 28740,
+    "count_in_range": 427
+  },
+  {
+    "score_range": "520-524.9",
+    "upper_bound": 524.9,
+    "lower_bound": 520,
+    "cumulative_rank": 29155,
+    "count_in_range": 415
+  },
+  {
+    "score_range": "515-519.9",
+    "upper_bound": 519.9,
+    "lower_bound": 515,
+    "cumulative_rank": 29551,
+    "count_in_range": 396
+  },
+  {
+    "score_range": "510-514.9",
+    "upper_bound": 514.9,
+    "lower_bound": 510,
+    "cumulative_rank": 29947,
+    "count_in_range": 396
+  },
+  {
+    "score_range": "505-509.9",
+    "upper_bound": 509.9,
+    "lower_bound": 505,
+    "cumulative_rank": 30343,
+    "count_in_range": 396
+  },
+  {
+    "score_range": "500-504.9",
+    "upper_bound": 504.9,
+    "lower_bound": 500,
+    "cumulative_rank": 30700,
+    "count_in_range": 357
+  },
+  {
+    "score_range": "495-499.9",
+    "upper_bound": 499.9,
+    "lower_bound": 495,
+    "cumulative_rank": 31049,
+    "count_in_range": 349
+  },
+  {
+    "score_range": "490-494.9",
+    "upper_bound": 494.9,
+    "lower_bound": 490,
+    "cumulative_rank": 31398,
+    "count_in_range": 349
+  },
+  {
+    "score_range": "485-489.9",
+    "upper_bound": 489.9,
+    "lower_bound": 485,
+    "cumulative_rank": 31747,
+    "count_in_range": 349
+  },
+  {
+    "score_range": "480-484.9",
+    "upper_bound": 484.9,
+    "lower_bound": 480,
+    "cumulative_rank": 32090,
+    "count_in_range": 343
+  },
+  {
+    "score_range": "475-479.9",
+    "upper_bound": 479.9,
+    "lower_bound": 475,
+    "cumulative_rank": 32419,
+    "count_in_range": 329
+  },
+  {
+    "score_range": "470-474.9",
+    "upper_bound": 474.9,
+    "lower_bound": 470,
+    "cumulative_rank": 32747,
+    "count_in_range": 328
+  },
+  {
+    "score_range": "465-469.9",
+    "upper_bound": 469.9,
+    "lower_bound": 465,
+    "cumulative_rank": 33076,
+    "count_in_range": 329
+  },
+  {
+    "score_range": "460-464.9",
+    "upper_bound": 464.9,
+    "lower_bound": 460,
+    "cumulative_rank": 33404,
+    "count_in_range": 328
+  },
+  {
+    "score_range": "455-459.9",
+    "upper_bound": 459.9,
+    "lower_bound": 455,
+    "cumulative_rank": 33733,
+    "count_in_range": 329
+  },
+  {
+    "score_range": "450-454.9",
+    "upper_bound": 454.9,
+    "lower_bound": 450,
+    "cumulative_rank": 34062,
+    "count_in_range": 329
+  },
+  {
+    "score_range": "445-449.9",
+    "upper_bound": 449.9,
+    "lower_bound": 445,
+    "cumulative_rank": 34390,
+    "count_in_range": 328
+  },
+  {
+    "score_range": "440-444.9",
+    "upper_bound": 444.9,
+    "lower_bound": 440,
+    "cumulative_rank": 34719,
+    "count_in_range": 329
+  }
+]

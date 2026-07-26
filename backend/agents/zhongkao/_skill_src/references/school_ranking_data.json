@@ -1,0 +1,2062 @@
+[
+  {
+    "name": "福州一中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 746.5,
+        "vol1_rank": 365,
+        "vol1_erjian_score": 745.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第1梯队",
+        "pre_zizhao_rank": 489,
+        "pre_zizhao_score": 743.5
+      },
+      "定转统": {
+        "vol1_score": 734.5,
+        "vol1_rank": 1272,
+        "vol1_erjian_score": 733.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第1梯队",
+        "pre_zizhao_rank": 1602,
+        "pre_zizhao_score": 730.5
+      }
+    }
+  },
+  {
+    "name": "福建师大附中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 742.5,
+        "vol1_rank": 612,
+        "vol1_erjian_score": 741.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第1梯队",
+        "pre_zizhao_rank": 812,
+        "pre_zizhao_score": 738.5
+      },
+      "定转统": {
+        "vol1_score": 740.0,
+        "vol1_rank": 786,
+        "vol1_erjian_score": 739.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第1梯队",
+        "pre_zizhao_rank": 1002,
+        "pre_zizhao_score": 736.5
+      }
+    }
+  },
+  {
+    "name": "福建师大附中中美班",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 723.0,
+        "vol1_rank": 2593,
+        "vol1_erjian_score": 722.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第2梯队",
+        "pre_zizhao_rank": 3137,
+        "pre_zizhao_score": 718.5
+      }
+    }
+  },
+  {
+    "name": "福州三中(西湖校区)",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 740.5,
+        "vol1_rank": 751,
+        "vol1_erjian_score": 739.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第1梯队",
+        "pre_zizhao_rank": 964,
+        "pre_zizhao_score": 737.0
+      },
+      "定转统": {
+        "vol1_score": 735.5,
+        "vol1_rank": 1177,
+        "vol1_erjian_score": 734.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第1梯队",
+        "pre_zizhao_rank": 1498,
+        "pre_zizhao_score": 731.5
+      }
+    }
+  },
+  {
+    "name": "福州格致中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 726.5,
+        "vol1_rank": 2150,
+        "vol1_erjian_score": 725.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第2梯队",
+        "pre_zizhao_rank": 2617,
+        "pre_zizhao_score": 722.0
+      },
+      "定转统": {
+        "vol1_score": 723.0,
+        "vol1_rank": 2593,
+        "vol1_erjian_score": 722.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第2梯队",
+        "pre_zizhao_rank": 3137,
+        "pre_zizhao_score": 718.5
+      }
+    }
+  },
+  {
+    "name": "福州八中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 725.0,
+        "vol1_rank": 2325,
+        "vol1_erjian_score": 724.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      },
+      "定转统": {
+        "vol1_score": 724.0,
+        "vol1_rank": 2459,
+        "vol1_erjian_score": 723.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州八中中美班",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州三中中加班",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 720.5,
+        "vol1_rank": 2927,
+        "vol1_erjian_score": 720.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 718.5,
+        "vol1_rank": 3212,
+        "vol1_erjian_score": 718.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第3梯队",
+        "pre_zizhao_rank": 3827,
+        "pre_zizhao_score": 714.0
+      },
+      "定转统": {
+        "vol1_score": 715.5,
+        "vol1_rank": 3647,
+        "vol1_erjian_score": 715.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第3梯队",
+        "pre_zizhao_rank": 4262,
+        "pre_zizhao_score": 711.0
+      }
+    }
+  },
+  {
+    "name": "福州四中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 713.5,
+        "vol1_rank": 3958,
+        "vol1_erjian_score": 713.0,
+        "vol2_score": 717.5,
+        "vol2_rank": 3357,
+        "vol2_erjian_score": 717.0,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第3梯队",
+        "pre_zizhao_rank": 4642,
+        "pre_zizhao_score": 708.5
+      },
+      "定转统": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": 714.0,
+        "vol2_rank": 3878,
+        "vol2_erjian_score": 713.5,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第3梯队",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州二中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 713.0,
+        "vol1_rank": 4037,
+        "vol1_erjian_score": 712.5,
+        "vol2_score": 713.5,
+        "vol2_rank": 3958,
+        "vol2_erjian_score": 713.0,
+        "vol3_score": 713.5,
+        "vol3_rank": 3958,
+        "vol3_erjian_score": 713.0,
+        "vol4_score": 713.5,
+        "vol4_rank": 3958,
+        "vol4_erjian_score": 713.0,
+        "tier": "第4梯队",
+        "pre_zizhao_rank": 4718,
+        "pre_zizhao_score": 708.0
+      },
+      "定转统": {
+        "vol1_score": 712.0,
+        "vol1_rank": 4196,
+        "vol1_erjian_score": 711.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第4梯队",
+        "pre_zizhao_rank": 4864,
+        "pre_zizhao_score": 707.5
+      }
+    }
+  },
+  {
+    "name": "长乐一中(吴航校区)",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 716.5,
+        "vol1_rank": 3502,
+        "vol1_erjian_score": 716.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第3梯队",
+        "pre_zizhao_rank": 4110,
+        "pre_zizhao_score": 712.0
+      },
+      "定转统": {
+        "vol1_score": 703.5,
+        "vol1_rank": 5636,
+        "vol1_erjian_score": 703.0,
+        "vol2_score": 711.0,
+        "vol2_rank": 4355,
+        "vol2_erjian_score": 710.5,
+        "vol3_score": 713.5,
+        "vol3_rank": 3958,
+        "vol3_erjian_score": 713.0,
+        "vol4_score": 713.5,
+        "vol4_rank": 3958,
+        "vol4_erjian_score": 713.0,
+        "tier": "第3梯队",
+        "pre_zizhao_rank": 6398,
+        "pre_zizhao_score": 698.5
+      }
+    }
+  },
+  {
+    "name": "长乐一中(首占校区)",
+    "area": "五区",
+    "categories": {
+      "统招": {
+        "vol1_score": 700.5,
+        "vol1_rank": 6160,
+        "vol1_erjian_score": 700.0,
+        "vol2_score": 703.5,
+        "vol2_rank": 5636,
+        "vol2_erjian_score": 703.0,
+        "vol3_score": 703.5,
+        "vol3_rank": 5636,
+        "vol3_erjian_score": 703.0,
+        "vol4_score": 703.5,
+        "vol4_rank": 5636,
+        "vol4_erjian_score": 703.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      },
+      "定转统": {
+        "vol1_score": 689.5,
+        "vol1_rank": 8150,
+        "vol1_erjian_score": 688.5,
+        "vol2_score": 693.5,
+        "vol2_rank": 7429,
+        "vol2_erjian_score": 692.5,
+        "vol3_score": 693.5,
+        "vol3_rank": 7429,
+        "vol3_erjian_score": 692.5,
+        "vol4_score": 693.5,
+        "vol4_rank": 7429,
+        "vol4_erjian_score": 692.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州屏东中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 702.5,
+        "vol1_rank": 5811,
+        "vol1_erjian_score": 702.0,
+        "vol2_score": 703.5,
+        "vol2_rank": 5636,
+        "vol2_erjian_score": 703.0,
+        "vol3_score": 703.5,
+        "vol3_rank": 5636,
+        "vol3_erjian_score": 703.0,
+        "vol4_score": 703.5,
+        "vol4_rank": 5636,
+        "vol4_erjian_score": 703.0,
+        "tier": "第4梯队",
+        "pre_zizhao_rank": 6632,
+        "pre_zizhao_score": 697.0
+      },
+      "定转统": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第4梯队",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州外国语学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 695.5,
+        "vol1_rank": 7066,
+        "vol1_erjian_score": 694.5,
+        "vol2_score": 703.5,
+        "vol2_rank": 5636,
+        "vol2_erjian_score": 703.0,
+        "vol3_score": 703.5,
+        "vol3_rank": 5636,
+        "vol3_erjian_score": 703.0,
+        "vol4_score": 703.5,
+        "vol4_rank": 5636,
+        "vol4_erjian_score": 703.0,
+        "tier": "第4梯队",
+        "pre_zizhao_rank": 7987,
+        "pre_zizhao_score": 689.5
+      },
+      "定转统": {
+        "vol1_score": 693.5,
+        "vol1_rank": 7429,
+        "vol1_erjian_score": 692.5,
+        "vol2_score": 703.0,
+        "vol2_rank": 5723,
+        "vol2_erjian_score": 702.5,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第4梯队",
+        "pre_zizhao_rank": 8311,
+        "pre_zizhao_score": 687.5
+      }
+    }
+  },
+  {
+    "name": "福州十八中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 688.5,
+        "vol1_rank": 8326,
+        "vol1_erjian_score": 687.5,
+        "vol2_score": 693.5,
+        "vol2_rank": 7429,
+        "vol2_erjian_score": 692.5,
+        "vol3_score": 693.5,
+        "vol3_rank": 7429,
+        "vol3_erjian_score": 692.5,
+        "vol4_score": 693.5,
+        "vol4_rank": 7429,
+        "vol4_erjian_score": 692.5,
+        "tier": "第5梯队",
+        "pre_zizhao_rank": 9328,
+        "pre_zizhao_score": 681.5
+      },
+      "定转统": {
+        "vol1_score": 686.5,
+        "vol1_rank": 8679,
+        "vol1_erjian_score": 685.0,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第5梯队",
+        "pre_zizhao_rank": 9649,
+        "pre_zizhao_score": 679.5
+      }
+    }
+  },
+  {
+    "name": "福州十一中(横屿校区)",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 686.5,
+        "vol1_rank": 8679,
+        "vol1_erjian_score": 685.0,
+        "vol2_score": 693.5,
+        "vol2_rank": 7429,
+        "vol2_erjian_score": 692.5,
+        "vol3_score": 693.5,
+        "vol3_rank": 7429,
+        "vol3_erjian_score": 692.5,
+        "vol4_score": 693.5,
+        "vol4_rank": 7429,
+        "vol4_erjian_score": 692.5,
+        "tier": "第5梯队",
+        "pre_zizhao_rank": 9649,
+        "pre_zizhao_score": 679.5
+      }
+    }
+  },
+  {
+    "name": "福州金山中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 681.5,
+        "vol1_rank": 9625,
+        "vol1_erjian_score": 680.0,
+        "vol2_score": 683.5,
+        "vol2_rank": 9235,
+        "vol2_erjian_score": 682.0,
+        "vol3_score": 683.5,
+        "vol3_rank": 9235,
+        "vol3_erjian_score": 682.0,
+        "vol4_score": 683.5,
+        "vol4_rank": 9235,
+        "vol4_erjian_score": 682.0,
+        "tier": "第5梯队",
+        "pre_zizhao_rank": 10582,
+        "pre_zizhao_score": 674.5
+      },
+      "定转统": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第5梯队",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "长乐华侨中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 677.0,
+        "vol1_rank": 10470,
+        "vol1_erjian_score": 675.0,
+        "vol2_score": 683.5,
+        "vol2_rank": 9235,
+        "vol2_erjian_score": 682.0,
+        "vol3_score": 683.5,
+        "vol3_rank": 9235,
+        "vol3_erjian_score": 682.0,
+        "vol4_score": 683.5,
+        "vol4_rank": 9235,
+        "vol4_erjian_score": 682.0,
+        "tier": "第6梯队",
+        "pre_zizhao_rank": 11496,
+        "pre_zizhao_score": 668.5
+      },
+      "定转统": {
+        "vol1_score": 674.0,
+        "vol1_rank": 11015,
+        "vol1_erjian_score": 671.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第6梯队",
+        "pre_zizhao_rank": 12051,
+        "pre_zizhao_score": 665.5
+      }
+    }
+  },
+  {
+    "name": "福州华侨中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 674.5,
+        "vol1_rank": 10926,
+        "vol1_erjian_score": 672.0,
+        "vol2_score": 683.5,
+        "vol2_rank": 9235,
+        "vol2_erjian_score": 682.0,
+        "vol3_score": 683.5,
+        "vol3_rank": 9235,
+        "vol3_erjian_score": 682.0,
+        "vol4_score": 683.5,
+        "vol4_rank": 9235,
+        "vol4_erjian_score": 682.0,
+        "tier": "第6梯队",
+        "pre_zizhao_rank": 11896,
+        "pre_zizhao_score": 666.5
+      },
+      "定转统": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第6梯队",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "清华附中福州学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 674.5,
+        "vol1_rank": 10926,
+        "vol1_erjian_score": 672.0,
+        "vol2_score": 683.5,
+        "vol2_rank": 9235,
+        "vol2_erjian_score": 682.0,
+        "vol3_score": 683.5,
+        "vol3_rank": 9235,
+        "vol3_erjian_score": 682.0,
+        "vol4_score": 683.5,
+        "vol4_rank": 9235,
+        "vol4_erjian_score": 682.0,
+        "tier": "第6梯队",
+        "pre_zizhao_rank": 11896,
+        "pre_zizhao_score": 666.5
+      }
+    }
+  },
+  {
+    "name": "福州延安中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 667.5,
+        "vol1_rank": 12193,
+        "vol1_erjian_score": 664.5,
+        "vol2_score": 673.5,
+        "vol2_rank": 11103,
+        "vol2_erjian_score": 671.0,
+        "vol3_score": 673.5,
+        "vol3_rank": 11103,
+        "vol3_erjian_score": 671.0,
+        "vol4_score": 673.5,
+        "vol4_rank": 11103,
+        "vol4_erjian_score": 671.0,
+        "tier": "第7梯队",
+        "pre_zizhao_rank": 13207,
+        "pre_zizhao_score": 658.5
+      }
+    }
+  },
+  {
+    "name": "马尾第一中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 666.0,
+        "vol1_rank": 12476,
+        "vol1_erjian_score": 663.0,
+        "vol2_score": 673.5,
+        "vol2_rank": 11103,
+        "vol2_erjian_score": 671.0,
+        "vol3_score": 673.5,
+        "vol3_rank": 11103,
+        "vol3_erjian_score": 671.0,
+        "vol4_score": 673.5,
+        "vol4_rank": 11103,
+        "vol4_erjian_score": 671.0,
+        "tier": "第7梯队",
+        "pre_zizhao_rank": 13515,
+        "pre_zizhao_score": 656.5
+      },
+      "定转统": {
+        "vol1_score": 661.0,
+        "vol1_rank": 13392,
+        "vol1_erjian_score": 657.5,
+        "vol2_score": 663.5,
+        "vol2_rank": 12937,
+        "vol2_erjian_score": 660.0,
+        "vol3_score": 663.5,
+        "vol3_rank": 12937,
+        "vol3_erjian_score": 660.0,
+        "vol4_score": 663.5,
+        "vol4_rank": 12937,
+        "vol4_erjian_score": 660.0,
+        "tier": "第7梯队",
+        "pre_zizhao_rank": 14401,
+        "pre_zizhao_score": 651.0
+      }
+    }
+  },
+  {
+    "name": "福州七中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 663.5,
+        "vol1_rank": 12937,
+        "vol1_erjian_score": 660.0,
+        "vol2_score": 665.0,
+        "vol2_rank": 12937,
+        "vol2_erjian_score": 660.0,
+        "vol3_score": 673.5,
+        "vol3_rank": 11103,
+        "vol3_erjian_score": 671.0,
+        "vol4_score": 673.5,
+        "vol4_rank": 11103,
+        "vol4_erjian_score": 671.0,
+        "tier": "第7梯队",
+        "pre_zizhao_rank": 13962,
+        "pre_zizhao_score": 654.0
+      }
+    }
+  },
+  {
+    "name": "福州三中(滨海校区)",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 663.5,
+        "vol1_rank": 12937,
+        "vol1_erjian_score": 660.0,
+        "vol2_score": 668.5,
+        "vol2_rank": 12005,
+        "vol2_erjian_score": 665.5,
+        "vol3_score": 673.5,
+        "vol3_rank": 11103,
+        "vol3_erjian_score": 671.0,
+        "vol4_score": 673.5,
+        "vol4_rank": 11103,
+        "vol4_erjian_score": 671.0,
+        "tier": "第7梯队",
+        "pre_zizhao_rank": 13962,
+        "pre_zizhao_score": 654.0
+      }
+    }
+  },
+  {
+    "name": "福州教育学院附中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 657.0,
+        "vol1_rank": 14047,
+        "vol1_erjian_score": 653.5,
+        "vol2_score": 663.5,
+        "vol2_rank": 12937,
+        "vol2_erjian_score": 660.0,
+        "vol3_score": 663.5,
+        "vol3_rank": 12937,
+        "vol3_erjian_score": 660.0,
+        "vol4_score": 663.5,
+        "vol4_rank": 12937,
+        "vol4_erjian_score": 660.0,
+        "tier": "第8梯队",
+        "pre_zizhao_rank": 15060,
+        "pre_zizhao_score": 646.5
+      }
+    }
+  },
+  {
+    "name": "福州格致中学鼓山校区",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 653.5,
+        "vol1_rank": 14615,
+        "vol1_erjian_score": 649.5,
+        "vol2_score": 653.5,
+        "vol2_rank": 14615,
+        "vol2_erjian_score": 649.5,
+        "vol3_score": 654.5,
+        "vol3_rank": 14447,
+        "vol3_erjian_score": 650.5,
+        "vol4_score": 663.5,
+        "vol4_rank": 12937,
+        "vol4_erjian_score": 660.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "闽江学院附中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 642.0,
+        "vol1_rank": 16493,
+        "vol1_erjian_score": 637.0,
+        "vol2_score": 643.5,
+        "vol2_rank": 16245,
+        "vol2_erjian_score": 638.5,
+        "vol3_score": 643.5,
+        "vol3_rank": 16245,
+        "vol3_erjian_score": 638.5,
+        "vol4_score": 643.5,
+        "vol4_rank": 16245,
+        "vol4_erjian_score": 638.5,
+        "tier": "第9梯队",
+        "pre_zizhao_rank": 17528,
+        "pre_zizhao_score": 629.5
+      }
+    }
+  },
+  {
+    "name": "福州十五中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 640.5,
+        "vol1_rank": 16740,
+        "vol1_erjian_score": 635.0,
+        "vol2_score": 643.5,
+        "vol2_rank": 16245,
+        "vol2_erjian_score": 638.5,
+        "vol3_score": 643.5,
+        "vol3_rank": 16245,
+        "vol3_erjian_score": 638.5,
+        "vol4_score": 643.5,
+        "vol4_rank": 16245,
+        "vol4_erjian_score": 638.5,
+        "tier": "第9梯队",
+        "pre_zizhao_rank": 17775,
+        "pre_zizhao_score": 627.5
+      }
+    }
+  },
+  {
+    "name": "福州铜盘中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 639.0,
+        "vol1_rank": 16967,
+        "vol1_erjian_score": 633.5,
+        "vol2_score": 643.5,
+        "vol2_rank": 16245,
+        "vol2_erjian_score": 638.5,
+        "vol3_score": 643.5,
+        "vol3_rank": 16245,
+        "vol3_erjian_score": 638.5,
+        "vol4_score": 643.5,
+        "vol4_rank": 16245,
+        "vol4_erjian_score": 638.5,
+        "tier": "第9梯队",
+        "pre_zizhao_rank": 18002,
+        "pre_zizhao_score": 626.0
+      }
+    }
+  },
+  {
+    "name": "福州十中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 636.5,
+        "vol1_rank": 17326,
+        "vol1_erjian_score": 631.0,
+        "vol2_score": 643.5,
+        "vol2_rank": 16245,
+        "vol2_erjian_score": 638.5,
+        "vol3_score": 643.5,
+        "vol3_rank": 16245,
+        "vol3_erjian_score": 638.5,
+        "vol4_score": 643.5,
+        "vol4_rank": 16245,
+        "vol4_erjian_score": 638.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州四十中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 634.0,
+        "vol1_rank": 17684,
+        "vol1_erjian_score": 628.0,
+        "vol2_score": 643.5,
+        "vol2_rank": 16245,
+        "vol2_erjian_score": 638.5,
+        "vol3_score": 643.5,
+        "vol3_rank": 16245,
+        "vol3_erjian_score": 638.5,
+        "vol4_score": 643.5,
+        "vol4_rank": 16245,
+        "vol4_erjian_score": 638.5,
+        "tier": "第10梯队",
+        "pre_zizhao_rank": 18720,
+        "pre_zizhao_score": 620.5
+      }
+    }
+  },
+  {
+    "name": "教育学院二附中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 633.5,
+        "vol1_rank": 17757,
+        "vol1_erjian_score": 627.5,
+        "vol2_score": 634.5,
+        "vol2_rank": 17614,
+        "vol2_erjian_score": 629.0,
+        "vol3_score": 643.5,
+        "vol3_rank": 16245,
+        "vol3_erjian_score": 638.5,
+        "vol4_score": 643.5,
+        "vol4_rank": 16245,
+        "vol4_erjian_score": 638.5,
+        "tier": "第10梯队",
+        "pre_zizhao_rank": 18792,
+        "pre_zizhao_score": 620.0
+      }
+    }
+  },
+  {
+    "name": "长乐高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 633.0,
+        "vol1_rank": 17828,
+        "vol1_erjian_score": 627.0,
+        "vol2_score": 633.5,
+        "vol2_rank": 17757,
+        "vol2_erjian_score": 627.5,
+        "vol3_score": 633.5,
+        "vol3_rank": 17757,
+        "vol3_erjian_score": 627.5,
+        "vol4_score": 633.5,
+        "vol4_rank": 17757,
+        "vol4_erjian_score": 627.5,
+        "tier": "第10梯队",
+        "pre_zizhao_rank": 18863,
+        "pre_zizhao_score": 619.5
+      }
+    }
+  },
+  {
+    "name": "福州鼓山中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 625.0,
+        "vol1_rank": 18891,
+        "vol1_erjian_score": 619.5,
+        "vol2_score": 633.5,
+        "vol2_rank": 17757,
+        "vol2_erjian_score": 627.5,
+        "vol3_score": 633.5,
+        "vol3_rank": 17757,
+        "vol3_erjian_score": 627.5,
+        "vol4_score": 633.5,
+        "vol4_rank": 17757,
+        "vol4_erjian_score": 627.5,
+        "tier": "第10梯队",
+        "pre_zizhao_rank": 19926,
+        "pre_zizhao_score": 612.0
+      }
+    }
+  },
+  {
+    "name": "福州城门中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 623.5,
+        "vol1_rank": 19093,
+        "vol1_erjian_score": 618.0,
+        "vol2_score": 632.0,
+        "vol2_rank": 17971,
+        "vol2_erjian_score": 626.0,
+        "vol3_score": 633.5,
+        "vol3_rank": 17757,
+        "vol3_erjian_score": 627.5,
+        "vol4_score": 633.5,
+        "vol4_rank": 17757,
+        "vol4_erjian_score": 627.5,
+        "tier": "第10梯队",
+        "pre_zizhao_rank": 20128,
+        "pre_zizhao_score": 610.0
+      }
+    }
+  },
+  {
+    "name": "福州城门中学日语班",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 621.5,
+        "vol1_rank": 19429,
+        "vol1_erjian_score": 615.5,
+        "vol2_score": 623.5,
+        "vol2_rank": 19093,
+        "vol2_erjian_score": 618.0,
+        "vol3_score": 623.5,
+        "vol3_rank": 19093,
+        "vol3_erjian_score": 618.0,
+        "vol4_score": 623.5,
+        "vol4_rank": 19093,
+        "vol4_erjian_score": 618.0,
+        "tier": "第10梯队",
+        "pre_zizhao_rank": 20397,
+        "pre_zizhao_score": 608.0
+      }
+    }
+  },
+  {
+    "name": "福州亭江中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 606.0,
+        "vol1_rank": 21251,
+        "vol1_erjian_score": 601.0,
+        "vol2_score": 613.5,
+        "vol2_rank": 20376,
+        "vol2_erjian_score": 608.0,
+        "vol3_score": 613.5,
+        "vol3_rank": 20376,
+        "vol3_erjian_score": 608.0,
+        "vol4_score": 613.5,
+        "vol4_rank": 20376,
+        "vol4_erjian_score": 608.0,
+        "tier": "第10梯队",
+        "pre_zizhao_rank": 22286,
+        "pre_zizhao_score": 592.0
+      }
+    }
+  },
+  {
+    "name": "福州琅岐中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 623.5,
+        "vol1_rank": 19160,
+        "vol1_erjian_score": 617.5,
+        "vol2_score": 624.5,
+        "vol2_rank": 18958,
+        "vol2_erjian_score": 619.0,
+        "vol3_score": 633.5,
+        "vol3_rank": 17757,
+        "vol3_erjian_score": 627.5,
+        "vol4_score": 633.5,
+        "vol4_rank": 17757,
+        "vol4_erjian_score": 627.5,
+        "tier": "第11梯队",
+        "pre_zizhao_rank": 22742,
+        "pre_zizhao_score": 588.0
+      }
+    }
+  },
+  {
+    "name": "长乐六中",
+    "area": "长乐",
+    "categories": {
+      "统招": {
+        "vol1_score": 611.5,
+        "vol1_rank": 20610,
+        "vol1_erjian_score": 606.0,
+        "vol2_score": 613.5,
+        "vol2_rank": 20376,
+        "vol2_erjian_score": 608.0,
+        "vol3_score": 613.5,
+        "vol3_rank": 20376,
+        "vol3_erjian_score": 608.0,
+        "vol4_score": 613.5,
+        "vol4_rank": 20376,
+        "vol4_erjian_score": 608.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "长乐二中",
+    "area": "五区",
+    "categories": {
+      "统招": {
+        "vol1_score": 583.5,
+        "vol1_rank": 23656,
+        "vol1_erjian_score": 579.5,
+        "vol2_score": 590.5,
+        "vol2_rank": 22921,
+        "vol2_erjian_score": 586.0,
+        "vol3_score": 593.5,
+        "vol3_rank": 22606,
+        "vol3_erjian_score": 589.0,
+        "vol4_score": 593.5,
+        "vol4_rank": 22606,
+        "vol4_erjian_score": 589.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "长乐七中",
+    "area": "五区",
+    "categories": {
+      "统招": {
+        "vol1_score": 553.5,
+        "vol1_rank": 26510,
+        "vol1_erjian_score": 550.5,
+        "vol2_score": 555.0,
+        "vol2_rank": 26392,
+        "vol2_erjian_score": 552.0,
+        "vol3_score": 563.5,
+        "vol3_rank": 25616,
+        "vol3_erjian_score": 560.0,
+        "vol4_score": 563.5,
+        "vol4_rank": 25616,
+        "vol4_erjian_score": 560.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "长乐五中",
+    "area": "五区",
+    "categories": {
+      "统招": {
+        "vol1_score": 535.5,
+        "vol1_rank": 27962,
+        "vol1_erjian_score": 534.5,
+        "vol2_score": 543.5,
+        "vol2_rank": 27312,
+        "vol2_erjian_score": 541.5,
+        "vol3_score": 543.5,
+        "vol3_rank": 27312,
+        "vol3_erjian_score": 541.5,
+        "vol4_score": 543.5,
+        "vol4_rank": 27312,
+        "vol4_erjian_score": 541.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "长乐三中",
+    "area": "五区",
+    "categories": {
+      "统招": {
+        "vol1_score": 518.0,
+        "vol1_rank": 29308,
+        "vol1_erjian_score": 518.0,
+        "vol2_score": 523.5,
+        "vol2_rank": 28876,
+        "vol2_erjian_score": 523.5,
+        "vol3_score": 523.5,
+        "vol3_rank": 28876,
+        "vol3_erjian_score": 523.5,
+        "vol4_score": 523.5,
+        "vol4_rank": 28876,
+        "vol4_erjian_score": 523.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "长乐四中",
+    "area": "五区",
+    "categories": {
+      "统招": {
+        "vol1_score": 513.5,
+        "vol1_rank": 29630,
+        "vol1_erjian_score": 514.0,
+        "vol2_score": 515.5,
+        "vol2_rank": 29491,
+        "vol2_erjian_score": 515.5,
+        "vol3_score": 523.5,
+        "vol3_rank": 28876,
+        "vol3_erjian_score": 523.5,
+        "vol4_score": 523.5,
+        "vol4_rank": 28876,
+        "vol4_erjian_score": 523.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州文博中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 616.0,
+        "vol1_rank": 20074,
+        "vol1_erjian_score": 610.5,
+        "vol2_score": 623.5,
+        "vol2_rank": 19093,
+        "vol2_erjian_score": 618.0,
+        "vol3_score": 623.5,
+        "vol3_rank": 19093,
+        "vol3_erjian_score": 618.0,
+        "vol4_score": 623.5,
+        "vol4_rank": 19093,
+        "vol4_erjian_score": 618.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州日升中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 593.5,
+        "vol1_rank": 22606,
+        "vol1_erjian_score": 589.0,
+        "vol2_score": 593.5,
+        "vol2_rank": 22606,
+        "vol2_erjian_score": 589.0,
+        "vol3_score": 602.5,
+        "vol3_rank": 21651,
+        "vol3_erjian_score": 597.5,
+        "vol4_score": 603.5,
+        "vol4_rank": 21538,
+        "vol4_erjian_score": 598.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州黎明中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 563.5,
+        "vol1_rank": 25616,
+        "vol1_erjian_score": 560.0,
+        "vol2_score": 570.0,
+        "vol2_rank": 25580,
+        "vol2_erjian_score": 560.5,
+        "vol3_score": 573.5,
+        "vol3_rank": 25162,
+        "vol3_erjian_score": 564.5,
+        "vol4_score": 573.5,
+        "vol4_rank": 25162,
+        "vol4_erjian_score": 564.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州阳光实验学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 483.5,
+        "vol1_rank": 31647,
+        "vol1_erjian_score": 486.5,
+        "vol2_score": 483.5,
+        "vol2_rank": 31985,
+        "vol2_erjian_score": 481.5,
+        "vol3_score": 488.5,
+        "vol3_rank": 31634,
+        "vol3_erjian_score": 486.5,
+        "vol4_score": 493.5,
+        "vol4_rank": 31023,
+        "vol4_erjian_score": 495.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福建工贸学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 593.5,
+        "vol1_rank": 22606,
+        "vol1_erjian_score": 589.0,
+        "vol2_score": 593.5,
+        "vol2_rank": 22606,
+        "vol2_erjian_score": 589.0,
+        "vol3_score": 600.0,
+        "vol3_rank": 21933,
+        "vol3_erjian_score": 595.0,
+        "vol4_score": 603.5,
+        "vol4_rank": 21538,
+        "vol4_erjian_score": 598.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州财政金融职业",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 593.5,
+        "vol1_rank": 22606,
+        "vol1_erjian_score": 589.0,
+        "vol2_score": 595.5,
+        "vol2_rank": 22397,
+        "vol2_erjian_score": 591.0,
+        "vol3_score": 603.5,
+        "vol3_rank": 21538,
+        "vol3_erjian_score": 598.5,
+        "vol4_score": 603.5,
+        "vol4_rank": 21538,
+        "vol4_erjian_score": 598.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州商贸职业中专学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 583.5,
+        "vol1_rank": 23656,
+        "vol1_erjian_score": 579.5,
+        "vol2_score": 588.5,
+        "vol2_rank": 23129,
+        "vol2_erjian_score": 584.5,
+        "vol3_score": 593.5,
+        "vol3_rank": 22606,
+        "vol3_erjian_score": 589.0,
+        "vol4_score": 593.5,
+        "vol4_rank": 22606,
+        "vol4_erjian_score": 589.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州机电工程职业",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 583.5,
+        "vol1_rank": 23656,
+        "vol1_erjian_score": 579.5,
+        "vol2_score": 583.5,
+        "vol2_rank": 23656,
+        "vol2_erjian_score": 579.5,
+        "vol3_score": 587.5,
+        "vol3_rank": 23234,
+        "vol3_erjian_score": 583.5,
+        "vol4_score": 593.5,
+        "vol4_rank": 22606,
+        "vol4_erjian_score": 589.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福建经济学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 583.5,
+        "vol1_rank": 23656,
+        "vol1_erjian_score": 579.5,
+        "vol2_score": 588.0,
+        "vol2_rank": 22606,
+        "vol2_erjian_score": 589.0,
+        "vol3_score": 593.5,
+        "vol3_rank": 22606,
+        "vol3_erjian_score": 589.0,
+        "vol4_score": 593.5,
+        "vol4_rank": 22606,
+        "vol4_erjian_score": 589.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "长乐职业中专学校",
+    "area": "五区",
+    "categories": {
+      "统招": {
+        "vol1_score": 580.0,
+        "vol1_rank": 24034,
+        "vol1_erjian_score": 575.5,
+        "vol2_score": 583.5,
+        "vol2_rank": 23656,
+        "vol2_erjian_score": 579.5,
+        "vol3_score": 583.5,
+        "vol3_rank": 23656,
+        "vol3_erjian_score": 579.5,
+        "vol4_score": 583.5,
+        "vol4_rank": 23656,
+        "vol4_erjian_score": 579.5,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "综合高中班",
+    "area": "长乐",
+    "categories": {
+      "统招": {
+        "vol1_score": 494.5,
+        "vol1_rank": 30957,
+        "vol1_erjian_score": 496.5,
+        "vol2_score": 503.5,
+        "vol2_rank": 30334,
+        "vol2_erjian_score": 505.0,
+        "vol3_score": 503.5,
+        "vol3_rank": 30334,
+        "vol3_erjian_score": 505.0,
+        "vol4_score": 503.5,
+        "vol4_rank": 30334,
+        "vol4_erjian_score": 505.0,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州恒一高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州中加学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州超德中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州超德中学日语班",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州辅仁学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州左海学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州左海学校日语班",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州华成高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "闽江涵雅艺术实验高中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州市赛德文高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州青鸟北附高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州至一华伦高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州市星纪园高中",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福外高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福清西山学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州市书生实验学校",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州卓高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州市耀华高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "福州三状元高级中学",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": null,
+        "vol1_rank": null,
+        "vol1_erjian_score": null,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "",
+        "pre_zizhao_rank": null,
+        "pre_zizhao_score": null
+      }
+    }
+  },
+  {
+    "name": "普高第一条投档线(截胡线)",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 743.5,
+        "vol1_rank": 577,
+        "vol1_erjian_score": 742.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第1梯队",
+        "pre_zizhao_rank": 777,
+        "pre_zizhao_score": 739
+      }
+    }
+  },
+  {
+    "name": "普高第二条投档线(高保线)",
+    "area": "市区",
+    "categories": {
+      "统招": {
+        "vol1_score": 713.5,
+        "vol1_rank": 3958,
+        "vol1_erjian_score": 713.5,
+        "vol2_score": null,
+        "vol2_rank": null,
+        "vol2_erjian_score": null,
+        "vol3_score": null,
+        "vol3_rank": null,
+        "vol3_erjian_score": null,
+        "vol4_score": null,
+        "vol4_rank": null,
+        "vol4_erjian_score": null,
+        "tier": "第3梯队",
+        "pre_zizhao_rank": 4642,
+        "pre_zizhao_score": 708.5
+      }
+    }
+  }
+]

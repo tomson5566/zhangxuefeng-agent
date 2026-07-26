@@ -1,191 +1,472 @@
-// PUBLIC_FIX_v1 - public deployment fix (auto-applied; do not edit by hand)
-// 反代后 API 和前端同源,用相对路径。nginx 把 /api/* 转发到后端 :8000。
-// 留个 fallback:同源失败时回退到当前 host :8000 直连(供调试)
-const API_BASE = '';
+/* ============ 状态管理 ============ */
+const STORAGE = {
+    chats: 'xf_chats',
+    curId: 'xf_cur',
+    dark: 'xf_dark',
+};
 
-// ==================== Session ID(多轮记忆)====================
-// 首次访问生成 UUID 放 localStorage,后续复用 — 同一浏览器同一会话
+let state = {
+    chats: {},          // {id: {name, msgs: [{role, content}], uploaded: [{filename, size, ext, saved_path}]}}
+    curId: null,
+    sessionId: null,    // 后端 session_id(每次刷新变化)
+    uploading: false,
+    curAgent: 'zhangxuefeng',  // 当前 AI 角色(zhangxuefeng | zhongkao)
+};
+
+/* ============ Session ID 管理 ============ */
 function getSessionId() {
-    let sid = null;
-    try { sid = localStorage.getItem('zx_session_id'); } catch (_) {}
-    if (!sid || !/^[0-9a-f-]{8,128}$/i.test(sid)) {
-        // crypto.randomUUID 在所有现代浏览器 + 局域网 IP 都可用
-        sid = (window.crypto && crypto.randomUUID)
-            ? crypto.randomUUID()
-            : 'sess-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
-        try { localStorage.setItem('zx_session_id', sid); } catch (_) {}
+    if (!state.sessionId) {
+        state.sessionId = 'web-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8);
     }
-    return sid;
+    return state.sessionId;
 }
-const SESSION_ID = getSessionId();
 
-// ==================== Markdown 渲染 ====================
-// marked.js 从 CDN 加载,失败时降级到纯文本(不阻塞聊天)
-if (window.marked) {
-    marked.setOptions({
-        gfm: true,           // 启用 GitHub Flavored Markdown(表格、删除线等)
-        breaks: true,        // 单换行变 <br>,聊天场景友好
-        headerIds: false,    // 不生成 id
-        mangle: false,
+/* ============ localStorage ============ */
+function saveState() {
+    try {
+        localStorage.setItem(STORAGE.chats, JSON.stringify(state.chats));
+        localStorage.setItem(STORAGE.curId, state.curId || '');
+    } catch (e) { console.warn('localStorage save failed:', e); }
+}
+function loadState() {
+    try {
+        const raw = localStorage.getItem(STORAGE.chats);
+        if (raw) state.chats = JSON.parse(raw);
+        const curId = localStorage.getItem(STORAGE.curId);
+        if (curId && state.chats[curId]) state.curId = curId;
+    } catch (e) { console.warn('localStorage load failed:', e); }
+}
+function saveDark(dark) {
+    localStorage.setItem(STORAGE.dark, dark ? '1' : '');
+}
+function loadDark() {
+    return localStorage.getItem(STORAGE.dark) === '1';
+}
+
+/* ============ 对话管理 ============ */
+function newChat() {
+    const id = 'c' + Date.now() + '-' + Math.random().toString(36).slice(2, 6);
+    state.chats[id] = {
+        name: '新对话',
+        msgs: [],
+        uploaded: [],
+        createdAt: Date.now(),
+    };
+    state.curId = id;
+    saveState();
+    renderChatList();
+    renderMessages();
+    renderChips();
+}
+function delChat(id) {
+    if (!state.chats[id]) return;
+    if (!confirm('确定删除这个对话?')) return;
+    delete state.chats[id];
+    if (state.curId === id) state.curId = null;
+    if (!state.curId && Object.keys(state.chats).length > 0) {
+        state.curId = Object.keys(state.chats)[0];
+    }
+    if (Object.keys(state.chats).length === 0) {
+        newChat();
+        return;
+    }
+    saveState();
+    renderChatList();
+    renderMessages();
+    renderChips();
+}
+function getCurChat() {
+    if (!state.curId || !state.chats[state.curId]) return null;
+    return state.chats[state.curId];
+}
+function updateCurName() {
+    const chat = getCurChat();
+    if (!chat) return;
+    const firstUser = chat.msgs.find(m => m.role === 'u');
+    if (firstUser && firstUser.content) {
+        chat.name = firstUser.content.slice(0, 18).replace(/\n/g, ' ');
+    }
+    saveState();
+    renderChatList();
+}
+
+/* ============ 渲染 ============ */
+function renderChatList() {
+    const el = document.getElementById('chatList');
+    const ids = Object.keys(state.chats).sort((a, b) =>
+        (state.chats[b].createdAt || 0) - (state.chats[a].createdAt || 0)
+    );
+    if (ids.length === 0) {
+        el.innerHTML = '<div class="list-empty">暂无对话<br>点下方按钮创建</div>';
+        return;
+    }
+    el.innerHTML = ids.map(id => {
+        const c = state.chats[id];
+        const on = id === state.curId ? ' on' : '';
+        return `<div class="item${on}" data-id="${id}">
+            <span class="name">${escapeHtml(c.name)}</span>
+            <span class="del" data-del="${id}">×</span>
+        </div>`;
+    }).join('');
+    // 绑定事件
+    el.querySelectorAll('.item').forEach(item => {
+        item.addEventListener('click', e => {
+            if (e.target.dataset.del) return;
+            state.curId = item.dataset.id;
+            saveState();
+            renderChatList();
+            renderMessages();
+            renderChips();
+        });
     });
-    // 简单 XSS 防护:剥掉 <script> 块
-    const _origParse = marked.parse.bind(marked);
-    marked.parse = (md) => _origParse(md).replace(/<script[\s\S]*?<\/script>/gi, '');
+    el.querySelectorAll('.del').forEach(del => {
+        del.addEventListener('click', e => {
+            e.stopPropagation();
+            delChat(del.dataset.del);
+        });
+    });
+}
+
+function renderMessages() {
+    const el = document.getElementById('messages');
+    const chat = getCurChat();
+    if (!chat || chat.msgs.length === 0) {
+        el.innerHTML = `<div class="welcome">
+            <div class="icon">🎓</div>
+            <h2>高考志愿 · 用就业倒推法给你说实话</h2>
+            <p>输入分数 / 选科 / 想去哪,让张雪峰给你盘</p>
+        </div>`;
+        return;
+    }
+    el.innerHTML = chat.msgs.map(m => bubbleHtml(m)).join('');
+    el.scrollTop = el.scrollHeight;
+}
+
+function bubbleHtml(m) {
+    if (m.role === 'thinking') {
+        return '<div class="thinking">张雪峰思考中</div>';
+    }
+    const cls = m.role === 'u' ? 'u' : 'a';
+    const who = m.role === 'u' ? '你' : '张雪峰';
+    const content = m.role === 'a' ? renderMarkdown(m.content) : escapeHtml(m.content);
+    return `<div class="bubble ${cls}">
+        <div class="who">${who}</div>
+        <div class="content">${content}</div>
+    </div>`;
+}
+
+function renderMarkdown(text) {
+    if (window.marked && window.marked.parse) {
+        try { return window.marked.parse(text); }
+        catch (e) { return escapeHtml(text); }
+    }
+    return escapeHtml(text).replace(/\n/g, '<br>');
 }
 
 function escapeHtml(s) {
-    return s.replace(/[&<>"']/g, c => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[c]));
+    if (s == null) return '';
+    return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
 }
 
-function renderMarkdown(md) {
-    if (window.marked) {
-        try {
-            return marked.parse(md);
-        } catch (e) {
-            console.warn('marked.parse failed:', e);
-            return escapeHtml(md);
-        }
+function renderChips() {
+    const chat = getCurChat();
+    const uploaded = chat ? chat.uploaded : [];
+    const wrap = document.getElementById('fileChips');
+    const list = document.getElementById('chipsList');
+    const count = document.getElementById('chipCount');
+    count.textContent = uploaded.length;
+    if (uploaded.length === 0) {
+        wrap.hidden = true;
+        return;
     }
-    return escapeHtml(md);
-}
-// =====================================================
-
-const form = document.getElementById('chat-form');
-const input = document.getElementById('question-input');
-const messages = document.getElementById('messages');
-const sendBtn = document.getElementById('send-btn');
-
-function appendMessage(role, text) {
-    messages.classList.remove('has-empty');
-    const div = document.createElement('div');
-    div.className = `message message-${role}`;
-    if (role === 'agent') {
-        // Agent 输出走 markdown:dataset 存原始文本,innerHTML 存渲染结果
-        div.dataset.markdown = text || '';
-        div.innerHTML = renderMarkdown(div.dataset.markdown);
-    } else {
-        // 用户消息是纯文本,绝对不要渲染 HTML
-        div.textContent = text;
-    }
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-    return div;
-}
-
-function setStreaming(bubble, on) {
-    if (on) bubble.classList.add('streaming');
-    else bubble.classList.remove('streaming');
-}
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const q = input.value.trim();
-    if (!q) return;
-
-    appendMessage('user', q);
-    input.value = '';
-    input.style.height = 'auto';
-    sendBtn.disabled = true;
-    input.disabled = true;
-
-    const agentBubble = appendMessage('agent', '');
-    setStreaming(agentBubble, true);
-
-    const url = `${API_BASE}/api/chat?q=${encodeURIComponent(q)}`;
-
-    try {
-        const resp = await fetch(url, {
-            method: 'GET',
-            headers: { 'X-Session-ID': SESSION_ID },
-        });
-        if (!resp.ok || !resp.body) {
-            // 404 / 502 / connection refused — 给用户具体指引
-            let hint = '';
-            if (resp.status === 404) {
-                hint = '（后端路由没找到，请确认 http://localhost:8000/health 返回 ok）';
-            } else if (resp.status === 0 || resp.status >= 500) {
-                hint = `（后端没起来，试试浏览器单独访问 ${API_BASE}/health）`;
+    wrap.hidden = false;
+    list.innerHTML = uploaded.map((f, i) => {
+        const icon = extIcon(f.ext);
+        const sizeKb = Math.round(f.size / 1024 * 10) / 10;
+        return `<div class="chip" data-i="${i}">
+            <span class="icon">${icon}</span>
+            <span class="name">${escapeHtml(f.filename)}</span>
+            <span class="size">${sizeKb}KB</span>
+            <span class="del" data-del-i="${i}">×</span>
+        </div>`;
+    }).join('');
+    list.querySelectorAll('.del').forEach(d => {
+        d.addEventListener('click', e => {
+            const i = parseInt(d.dataset.delI);
+            const chat = getCurChat();
+            if (chat) {
+                chat.uploaded.splice(i, 1);
+                saveState();
+                renderChips();
             }
-            throw new Error(`HTTP ${resp.status} ${hint}`.trim());
-        }
-        const reader = resp.body.getReader();
-        const decoder = new TextDecoder('utf-8');
-        let buffer = '';
+        });
+    });
+}
 
+function extIcon(ext) {
+    const m = {
+        '.txt': '📄', '.md': '📝',
+        '.docx': '📘', '.xlsx': '📊',
+        '.pdf': '📕', '.pptx': '📙',
+    };
+    return m[ext] || '📎';
+}
+
+/* ============ 上传 ============ */
+async function uploadFiles(fileList) {
+    if (state.uploading) {
+        toast('正在上传中,请稍候', 'error');
+        return;
+    }
+    const btn = document.getElementById('uploadBtn');
+    const files = Array.from(fileList);
+    const ALLOWED = ['.txt', '.md', '.docx', '.xlsx', '.pdf', '.pptx'];
+    const MAX = 50 * 1024 * 1024;  // 50MB
+
+    for (const file of files) {
+        const ext = '.' + file.name.split('.').pop().toLowerCase();
+        if (!ALLOWED.includes(ext)) {
+            toast(`不支持的格式: ${ext} (仅 ${ALLOWED.join(',')})`, 'error');
+            continue;
+        }
+        if (file.size > MAX) {
+            toast(`文件过大: ${file.name} (${Math.round(file.size/1024/1024)}MB > 50MB)`, 'error');
+            continue;
+        }
+        state.uploading = true;
+        btn.classList.add('uploading');
+        try {
+            const fd = new FormData();
+            fd.append('file', file);
+            const r = await fetch(`/api/upload?session_id=${encodeURIComponent(getSessionId())}`, {
+                method: 'POST',
+                body: fd,
+            });
+            if (!r.ok) {
+                const err = await r.text();
+                throw new Error(`HTTP ${r.status}: ${err.slice(0, 100)}`);
+            }
+            const meta = await r.json();
+            const chat = getCurChat();
+            if (chat) {
+                chat.uploaded.push({
+                    filename: meta.filename,
+                    size: meta.size,
+                    ext: meta.ext,
+                    saved_path: meta.saved_path,
+                });
+                saveState();
+                renderChips();
+            }
+            toast(`已上传: ${file.name}`, 'success');
+        } catch (e) {
+            toast(`上传失败: ${e.message}`, 'error');
+        } finally {
+            state.uploading = false;
+            btn.classList.remove('uploading');
+        }
+    }
+    document.getElementById('fileInput').value = '';   // 清空以便同名再上传
+}
+
+/* ============ Toast ============ */
+function toast(msg, type) {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = 'toast' + (type === 'error' ? ' error' : '');
+    el.hidden = false;
+    clearTimeout(el._t);
+    el._t = setTimeout(() => { el.hidden = true; }, 3000);
+}
+
+/* ============ 聊天流式 ============ */
+async function sendChat(question) {
+    const chat = getCurChat();
+    if (!chat) return;
+    // 1. 拼 user 消息
+    chat.msgs.push({ role: 'u', content: question });
+    // 2. 拼 thinking 泡(LLM 思考中)
+    chat.msgs.push({ role: 'thinking', content: '' });
+    // 3. 拼 AI 占位(流式填充)
+    const aiMsg = { role: 'a', content: '' };
+    chat.msgs.push(aiMsg);
+    saveState();
+    updateCurName();
+    renderMessages();
+    setStatus('thinking');
+
+    // 4. fetch SSE
+    try {
+        const url = `/api/chat?q=${encodeURIComponent(question)}`;
+        const r = await fetch(url, {
+            headers: {
+                'X-Session-ID': getSessionId(),
+                'X-Agent-Name': state.curAgent || 'zhangxuefeng',
+            }
+        });
+        if (!r.ok || !r.body) {
+            throw new Error(`HTTP ${r.status}`);
+        }
+        // 5. 流式读
+        const reader = r.body.getReader();
+        const decoder = new TextDecoder();
+        let buf = '';
+        let firstChunk = true;
         while (true) {
             const { done, value } = await reader.read();
             if (done) break;
-            buffer += decoder.decode(value, { stream: true });
-
-            // SSE: data: <payload>\n\n
-            let sep;
-            while ((sep = buffer.indexOf('\n\n')) !== -1) {
-                const evt = buffer.slice(0, sep);
-                buffer = buffer.slice(sep + 2);
-                if (!evt.startsWith('data: ')) continue;
-                const raw = evt.slice(6);
-                if (raw === '[DONE]') {
-                    setStreaming(agentBubble, false);
-                    continue;
-                }
-                if (raw.startsWith('[ERROR]')) {
-                    agentBubble.dataset.markdown += `\n\n[出错了: ${raw.slice(7)}]`;
-                    agentBubble.innerHTML = renderMarkdown(agentBubble.dataset.markdown);
-                    setStreaming(agentBubble, false);
-                    continue;
-                }
-                // 后端用 json.dumps({"t": ...}) 编码 payload,正常路径走 JSON.parse
-                // 兜底:万一 JSON 解析失败(双转义 / 损坏 / 老格式),尝试从
-                //       {"t":"..."} 字面量里用正则抢救出 token 文本
-                let token = '';
+            buf += decoder.decode(value, { stream: true });
+            // 拆 SSE 帧 (\n\n 分隔)
+            let idx;
+            while ((idx = buf.indexOf('\n\n')) !== -1) {
+                const frame = buf.slice(0, idx);
+                buf = buf.slice(idx + 2);
+                const line = frame.replace(/^data:\s*/, '').trim();
+                if (line === '[DONE]') continue;
                 try {
-                    const obj = JSON.parse(raw);
-                    token = obj.t || '';
-                } catch {
-                    let s = raw;
-                    const m = s.match(/\{"t"\s*:\s*"((?:[^"\\]|\\.)*)"\s*\}/);
-                    if (m) {
-                        token = m[1]
-                            .replace(/\\n/g, '\n')
-                            .replace(/\\"/g, '"')
-                            .replace(/\\\\/g, '\\');
-                    } else {
-                        // 真的兜不住,原样显示
-                        token = s;
+                    const obj = JSON.parse(line);
+                    if (obj.t) {
+                        // 第一次收到 token,移除 thinking 占位
+                        if (firstChunk) {
+                            const thinkIdx = chat.msgs.findIndex(m => m.role === 'thinking');
+                            if (thinkIdx !== -1) chat.msgs.splice(thinkIdx, 1);
+                            firstChunk = false;
+                        }
+                        aiMsg.content += obj.t;
+                        renderMessages();
                     }
-                }
-                if (!token) continue;
-                agentBubble.dataset.markdown += token;
-                agentBubble.innerHTML = renderMarkdown(agentBubble.dataset.markdown);
-                messages.scrollTop = messages.scrollHeight;
+                } catch (e) { /* skip invalid JSON */ }
             }
         }
-    } catch (err) {
-        agentBubble.dataset.markdown += `\n[网络/读取错误: ${err.message}]`;
-        agentBubble.innerHTML = renderMarkdown(agentBubble.dataset.markdown);
-        setStreaming(agentBubble, false);
+    } catch (e) {
+        const thinkIdx = chat.msgs.findIndex(m => m.role === 'thinking');
+        if (thinkIdx !== -1) chat.msgs.splice(thinkIdx, 1);
+        aiMsg.content += `\n\n[错误: ${e.message}]`;
+        renderMessages();
     } finally {
-        sendBtn.disabled = false;
-        input.disabled = false;
-        input.focus();
+        setStatus('ready');
+        saveState();
     }
-});
+}
 
-// 自动撑高 textarea
-input.addEventListener('input', () => {
-    input.style.height = 'auto';
-    input.style.height = Math.min(input.scrollHeight, 120) + 'px';
-});
+function setStatus(s) {
+    const el = document.getElementById('status');
+    if (s === 'thinking') {
+        el.textContent = '思考中';
+        el.classList.add('thinking');
+    } else {
+        el.textContent = '已就绪';
+        el.classList.remove('thinking');
+    }
+}
 
-// Ctrl/Cmd+Enter 提交
-input.addEventListener('keydown', (e) => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+/* ============ 主题切换 ============ */
+function toggleDark() {
+    document.body.classList.toggle('dark');
+    saveDark(document.body.classList.contains('dark'));
+}
+
+async function loadAgents() {
+    const sel = document.getElementById('agent-select');
+    if (!sel) return;
+    try {
+        const r = await fetch('/api/agents');
+        if (!r.ok) return;
+        const d = await r.json();
+        sel.innerHTML = '';
+        d.agents.forEach(a => {
+            const opt = document.createElement('option');
+            opt.value = a.name;
+            opt.textContent = a.display_name;
+            sel.appendChild(opt);
+        });
+        const last = localStorage.getItem('xf_agent');
+        if (last && d.agents.find(a => a.name === last)) {
+            sel.value = last;
+        }
+        state.curAgent = sel.value || 'zhangxuefeng';
+    } catch (e) {
+        console.warn('loadAgents failed:', e);
+        state.curAgent = 'zhangxuefeng';
+    }
+}
+
+/* ============ 事件绑定 ============ */
+function bindEvents() {
+    // 新建对话
+    document.getElementById('newBtn').addEventListener('click', newChat);
+    // 主题切换
+    document.getElementById('themeBtn').addEventListener('click', toggleDark);
+    // 移动端侧边栏开关
+    document.getElementById('menuBtn').addEventListener('click', () => {
+        document.getElementById('side').classList.toggle('open');
+    });
+
+    // 发送(表单 submit)
+    document.getElementById('chat-form').addEventListener('submit', e => {
         e.preventDefault();
-        form.requestSubmit();
-    }
-});
+        const ta = document.getElementById('question-input');
+        const q = ta.value.trim();
+        if (!q) return;
+        ta.value = '';
+        sendChat(q);
+    });
 
-// 初始空状态提示
-messages.classList.add('has-empty');
+    // textarea: Enter 发送, Shift+Enter 换行
+    document.getElementById('question-input').addEventListener('keydown', e => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            document.getElementById('chat-form').requestSubmit();
+        }
+    });
+
+    // 上传
+    document.getElementById('fileInput').addEventListener('change', e => {
+        if (e.target.files && e.target.files.length > 0) {
+            uploadFiles(e.target.files);
+        }
+    });
+
+    // agent 切换
+    const agentSel = document.getElementById('agent-select');
+    if (agentSel) {
+        agentSel.addEventListener('change', e => {
+            state.curAgent = e.target.value;
+            localStorage.setItem('xf_agent', state.curAgent);
+            toast(`已切换到: ${e.target.options[e.target.selectedIndex].textContent}`);
+        });
+    }
+}
+
+/* ============ 启动 ============ */
+function init() {
+    // 1. localStorage 恢复
+    loadState();
+    // 2. 主题恢复
+    if (loadDark()) document.body.classList.add('dark');
+    // 3. 没有对话就建一个
+    if (Object.keys(state.chats).length === 0) {
+        newChat();
+    } else if (!state.curId) {
+        state.curId = Object.keys(state.chats).sort((a, b) =>
+            (state.chats[b].createdAt || 0) - (state.chats[a].createdAt || 0)
+        )[0];
+        saveState();
+    }
+    // 4. 渲染
+    renderChatList();
+    renderMessages();
+    renderChips();
+    // 5. 事件
+    bindEvents();
+    // 6. session id 预生(让前端稳定)
+    getSessionId();
+    // 7. 加载 agent 列表
+    loadAgents();
+}
+
+init();
